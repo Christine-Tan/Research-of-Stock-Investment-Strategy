@@ -15,7 +15,7 @@ public class testDB {
     }
 
     private void test(){
-        test a = new test(1,"StevenWu","测试类");
+        test a = new test(2,"StevenWu","测试类");
         BaseDao baseDao = new BaseDao();
         baseDao.save(a);
     }
