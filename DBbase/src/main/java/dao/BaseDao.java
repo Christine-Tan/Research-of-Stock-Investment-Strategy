@@ -9,6 +9,7 @@ import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import util.SessionFactoryUtil;
 
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -51,6 +52,33 @@ public class BaseDao {
 		try {
 			session.beginTransaction();
 			session.update(entity);
+			session.getTransaction().commit();
+			session.clear();
+			return Msg.SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			if (session!=null) {
+				session.getTransaction().rollback();
+			}
+			return Msg.FAIL;
+		} finally {
+			session.close();
+		}
+
+	}
+
+//群体更新 感觉会比个体更新快一点
+	//oh my gosh 后来发现仅仅是update不对 需要saveorupdate才好
+	public Msg updateAll(Iterator<Object> entities ) {
+		System.out.print("调用了！！！！！！");
+		Session session = getSession();
+		try {
+			session.beginTransaction();
+			while (entities.hasNext()){
+
+				session.saveOrUpdate(entities.next());
+
+			}
 			session.getTransaction().commit();
 			session.clear();
 			return Msg.SUCCESS;
@@ -165,6 +193,18 @@ public class BaseDao {
 		}
 	}
 
+	public Object findByCode(Class<?> className, String key) {
+		Session session = getSession();
+		try {
+			Object instance = session.get(className, key);
+			return instance;
+		} catch (Exception re) {
+			re.printStackTrace();
+			return null;
+		} finally {
+			session.close();
+		}
+	}
 	public List<?> findByExample(Object entity) {
 		List<?> list = null;
 		Session session = getSession();
@@ -220,6 +260,26 @@ public class BaseDao {
 				session.getTransaction().rollback();
 			}
 		return null;
+		} finally {
+			session.close();
+		}
+	}
+
+
+	public List<Object> execSql(String sql) {
+		Session session = getSession();
+		try {
+			session.beginTransaction();
+			List<Object> objects = session.createSQLQuery(sql).list();
+			session.getTransaction().commit();
+			session.clear();
+			return objects;
+		} catch (Exception re) {
+			re.printStackTrace();
+			if (session!=null) {
+				session.getTransaction().rollback();
+			}
+			return null;
 		} finally {
 			session.close();
 		}
