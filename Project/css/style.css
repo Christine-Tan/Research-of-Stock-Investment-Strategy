@@ -479,22 +479,22 @@ TESTIMONIAL
     border: 0px none !important;
     box-shadow: none !important;
 }
-.testimonial-item ul li blockquote::before {
-    content: '“';
-    left: 30px;
-}
-.testimonial-item ul li blockquote::before, .testimonial-item ul li blockquote::after {
-    position: absolute;
-    font-weight: 300;
-    font-size: 3em;
-    font-family: Georgia, serif;
-    color: #ccc;
-    top: 62%;
-}
-.testimonial-item ul li blockquote::after {
-    content: '”';
-    right: 30px;
-}
+/*.testimonial-item ul li blockquote::before {*/
+    /*content: '"';*/
+    /*left: 30px;*/
+/*}*/
+/*.testimonial-item ul li blockquote::before, .testimonial-item ul li blockquote::after {*/
+    /*position: absolute;*/
+    /*font-weight: 300;*/
+    /*font-size: 3em;*/
+    /*font-family: Georgia, serif;*/
+    /*color: #ccc;*/
+    /*top: 62%;*/
+/*}*/
+/*.testimonial-item ul li blockquote::after {*/
+    /*content: '"';*/
+    /*right: 30px;*/
+/*}*/
 /***********************************
 ************************************
 Blog

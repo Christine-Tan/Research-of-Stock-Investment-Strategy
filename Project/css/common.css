@@ -1,0 +1,16 @@
+
+body{
+    background-color: #031634;
+}
+.navbar-fixed-top-1{right:0;left:0;z-index:1030;padding-right:0;padding-left:0;max-height:200px}
+@media (min-width:768px){.navbar-fixed-top-1{border-radius:0}}
+.navbar-fixed-top-1{top:0;border-width:0 0 1px}
+#myNavbar{
+    padding-right: 0px;
+}
+.mycontainer{
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    padding-top: 10px;
+}
