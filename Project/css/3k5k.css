@@ -25,11 +25,11 @@
         float: right;
         margin-right: 0
     }
+    .sm-p{
+        margin-top: 20px;
+    }
 }
-.titleword{
-    font-weight: 500;
-    font-size: 23px;
-}
+
 
 .mid-div{
     margin-top: 20px;
