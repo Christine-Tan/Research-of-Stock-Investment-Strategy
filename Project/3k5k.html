@@ -12,9 +12,13 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/pikaday.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/site.css">-->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="css/3k5k.css">
+
 </head>
 <body>
 <div id="myDiv">
@@ -46,12 +50,28 @@
             </header>
 
 
-
         <div class="container mycontainer"  >
-            <div class="col-md-6 col-lg-6 " >
+            <div class="col-md-5 col-lg-5  col-md-offset-1 col-lg-offset-1"  >
                 <p>3根K线看转折,5根K线定趋势</p>
-            </div>
-            <div class="col-md-6 col-lg-6 " >
+                <div style="margin-bottom: 10px"> 股票范围: <select class="selectpicker  dis-con ">
+                    <option>自定义股票组1</option>
+                    <option>自定义股票组2</option>
+                    <option>自定义股票组3</option>
+                </select></div>
+
+
+                <div>
+           开始时间:
+           <input type="text"  class="form-control "  id="start"   ><br>
+                结束时间:
+              <input type="text"  class="form-control "  id="end"   ><br>
+
+                    <button type="button" class="btn btn-primary" style="float: right;margin-right: 33%">回测</button>
+                </div>
+
+
+            </div >
+            <div class="col-md-5 col-lg-5 " >
                 <p>回测结果</p>
             </div>
         </div>
@@ -74,5 +94,8 @@
 <script src="js/jquery.bxslider.min.js"></script>
 <script src="js/custom.js"></script>
 <script src="js/bootstrap-select.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/pikaday.js"></script>
+<script src="js/date.js"></script>
 </body>
 </html>
