@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-table.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/pikaday.css">
     <!--<link rel="stylesheet" type="text/css" href="css/site.css">-->
@@ -37,8 +38,8 @@
                         </div>
                         <div class="collapse navbar-collapse " id="myNavbar" >
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="active"><a href="#main-header">首页</a></li>
-                                <li class=""><a href="#feature">3K/5K战法</a></li>
+                                <li class=""><a href="index.html">首页</a></li>
+                                <li class="active"><a href="#feature">3K/5K战法</a></li>
                                 <li class=""><a href="#service">ENE策略</a></li>
                                 <li class=""><a href="#portfolio">不知名战法</a></li>
                                 <li class=""><a href="#testimonial">个人中心</a></li>
@@ -51,8 +52,9 @@
 
 
         <div class="container mycontainer"  >
-            <div class="col-md-5 col-lg-5  col-md-offset-1 col-lg-offset-1"  >
-                <p>3根K线看转折,5根K线定趋势</p>
+            <div class="col-md-5 col-lg-5  col-md-offset-1 col-lg-offset-1 col-xs-12 col-sm-12"  >
+                <p class="titleword">3K/5K策略</p>
+                <p >3根K线看转折,5根K线定趋势</p>
                 <div style="margin-bottom: 10px"> 股票范围: <select class="selectpicker  dis-con ">
                     <option>自定义股票组1</option>
                     <option>自定义股票组2</option>
@@ -66,18 +68,48 @@
                 结束时间:
               <input type="text"  class="form-control "  id="end"   ><br>
 
-                    <button type="button" class="btn btn-primary" style="float: right;margin-right: 33%">回测</button>
+                    <button type="button" class="btn btn-primary" id="loopback" >回测</button>
                 </div>
 
-
             </div >
-            <div class="col-md-5 col-lg-5 " >
-                <p>回测结果</p>
+            <div class="col-md-6 col-lg-6 " >
+                <p  class="titleword" style="clear: both">回测结果</p>
+                <div style="position: relative">
+                <table id="table"></table>
+                    <button type="button" class="btn btn-primary" id="confirm" >加入到股票池</button>
+                </div>
             </div>
         </div>
 
 
-    <footer id="footer">
+    <div class="container mycontainer mid-div"  >
+        <div class="col-md-4 col-lg-4  col-md-offset-1 col-lg-offset-1 col-xs-12 col-sm-12"  >
+            <p class="titleword">股票池</p>
+            <table id="tablepool"></table>
+
+        </div >
+        <div class="col-md-6 col-lg-6  col-md-offset-1 col-lg-offset-1 col-xs-12 col-sm-12"  >
+            <p class="titleword">策略分析</p>
+            <p>买入条件</p>
+            <table id="tablebuy"></table>
+            <p style="margin-top: 10px">卖出条件</p>
+            <table id="tablesale"></table>
+
+        </div >
+
+    </div>
+
+
+    <div class="container mycontainer mid-div"  >
+        <div class="col-md-12 col-lg-12   col-xs-12 col-sm-12" id="kdiv">
+            <p class="titleword">K线展示图</p>
+            <div id="kline" ></div>
+
+        </div >
+
+    </div>
+
+    <footer id="footer" class="footer" >
         <div class="container">
             <div class="row text-center">
                 <p>&copy; 南京大学股票投资策略研究小组. <br>
@@ -96,6 +128,12 @@
 <script src="js/bootstrap-select.min.js"></script>
 <script src="js/moment.min.js"></script>
 <script src="js/pikaday.js"></script>
+<script src="js/bootstrap-table.js"></script>
+<script src="js/bootstrap-table-zh-CN.js"></script>
 <script src="js/date.js"></script>
+<script src="js/table.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/Kline.js"></script>
+
 </body>
 </html>
